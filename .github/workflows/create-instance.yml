@@ -44,3 +44,4 @@ jobs:
 
       - name: Try to create instance
         run: php index.php
+
