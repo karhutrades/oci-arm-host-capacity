@@ -25,8 +25,9 @@ jobs:
 
       - name: Write OCI private key
         run: |
-          echo "${{ secrets.OCI_PRIVATE_KEY_CONTENTS }}" > /tmp/oci_key.pem
+          printf '%s' "${{ secrets.OCI_PRIVATE_KEY_CONTENTS }}" > /tmp/oci_key.pem
           chmod 600 /tmp/oci_key.pem
+          cat /tmp/oci_key.pem | head -1
 
       - name: Install PHP
         uses: shivammathur/setup-php@v2
